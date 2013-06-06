@@ -80,6 +80,11 @@
   			<p>4.b. If none of the flags are true, it will check if the queue exists</p>
 		</div>
 		<div class="jd-descr">
+ 			<h2>Using the AMQP Components</h2>
+ 			<p>In order to use the components, you need to:</p>
+ 			<p>Use them in a <b>flow with an AMQP Inbound Endpoint at the begining</b></p>
+ 			<p>Establish a configuration with an <b>ACK MODE: AUTO</b>. Otherwise the component will throw an exception saying that it cannot find the channel</p> 
+		<div class="jd-descr">
 			<h2>Consumers bind to a Queue - Known limitation</h2>
 			<p>Since AMQP is a transport and for that it sticks to the inbound/outbound endpoint rules of mule, it can't be two different consumers pointing to the same Queue. This is because when an endpoint is started, the endpointUri must be a Unique Key.</p>
  			<p>The endpointUri of an AMQP Inbound-Endpoint is conformed as: <i>amqp://{exchange-name}/amqp-queue.{queue-name}</i>. So, using two different endpoints pointing to the same exchange and queue will result in a duplicate endpointUri.</p>
